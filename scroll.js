@@ -55,7 +55,7 @@
 
     if (heroMark && !still) {
       const y = scrollY;
-      heroMark.style.transform = `translateY(${y * 0.35}px) scale(${1 + y / 900}) rotate(${y / 12}deg)`;
+      heroMark.style.transform = `translateY(${y * 0.25}px) scale(${1 + y / 1400})`;
       heroMark.style.opacity = String(clamp(1 - y / 700));
     }
 
