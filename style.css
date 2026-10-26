@@ -364,3 +364,59 @@ nav.links a[aria-current="page"] { color: #fff; box-shadow: inset 0 -2px 0 rgba(
   .shimmer, .icon-orbit img, .icon-orbit::before, .ticker-track, .glow-border::before, .soon-pill i, .caret { animation: none; }
   .feature { transform: none; }
 }
+
+/* Apps in the menu, with their icons */
+nav.links a.nav-app { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 6px; border-radius: 999px;
+  background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); color: #E6E0F7; }
+nav.links a.nav-app img { width: 28px; height: 28px; border-radius: 8px; }
+nav.links a.nav-app:hover { background: rgba(255,255,255,.12); color: #fff; }
+nav.links a.nav-app[aria-current="page"] { box-shadow: inset 0 0 0 1.5px rgba(var(--c1), 1); padding-bottom: 0; }
+
+/* The home page's launch box: countdown and pre-order list */
+.preorder { width: 100%; max-width: 760px; margin: 46px auto 0; }
+.preorder .inner { padding: 34px 30px; text-align: left; }
+.preorder-head { display: flex; gap: 22px; align-items: flex-start; }
+.preorder-icon { flex: none; width: 84px; height: 84px; border-radius: 20px; box-shadow: 0 14px 40px rgba(124,92,255,.45); animation: float 5s ease-in-out infinite; }
+.preorder h2 { margin: 10px 0 0; font-size: clamp(20px, 2.6vw, 30px); line-height: 1.3; }
+.preorder-head p { margin: 12px 0 0; color: var(--muted); max-width: none; }
+.countdown { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 26px 0 0; }
+.countdown div { border-radius: 18px; padding: 14px 8px; text-align: center; background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); }
+.countdown b { display: block; font-family: var(--display); font-weight: 400; font-size: clamp(24px, 3.4vw, 38px); font-variant-numeric: tabular-nums; }
+.countdown span { font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #A9A3BE; }
+.preorder .waitlist { max-width: none; margin: 22px 0 0; }
+.preorder .waitlist .field { justify-content: flex-start; }
+.preorder .waitlist-fallback { margin-top: 22px; }
+
+/* Big links to each app, right under the launch box */
+.app-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 100%; max-width: 760px; margin: 18px auto 0; }
+.app-link { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 22px; text-decoration: none; text-align: left;
+  background: rgba(14,11,26,.85); box-shadow: inset 0 0 0 1px rgba(255,255,255,.1); transition: transform .25s ease, box-shadow .25s ease; }
+.app-link img { width: 56px; height: 56px; border-radius: 14px; flex: none; }
+.app-link span { flex: 1; min-width: 0; }
+.app-link b { display: block; font-family: var(--display); font-weight: 400; font-size: 17px; color: var(--text); }
+.app-link small { display: block; margin-top: 4px; font-size: 14px; color: var(--muted); }
+.app-link i { font-style: normal; font-size: 22px; color: var(--muted); transition: transform .25s ease; }
+.app-link:hover { transform: translateY(-3px); }
+.app-link:hover i { transform: translateX(4px); color: #fff; }
+.app-link.jolt:hover { box-shadow: inset 0 0 0 1.5px #A855F7, 0 16px 44px rgba(124,92,255,.35); }
+.app-link.stallwise:hover { box-shadow: inset 0 0 0 1.5px #FF6A3D, 0 16px 44px rgba(255,90,60,.3); }
+
+@media (max-width: 700px) {
+  .app-links { grid-template-columns: 1fr; }
+  .preorder .inner { padding: 26px 20px; }
+  .preorder-head { flex-direction: column; gap: 14px; }
+  .preorder-icon { width: 64px; height: 64px; border-radius: 16px; }
+  .countdown { gap: 8px; }
+}
+@media (max-width: 560px) {
+  /* Phones: the two apps stay in the menu; Contact and About move to the footer. */
+  nav.links { gap: 8px; }
+  nav.links a.nav-app { display: inline-flex; height: 38px; padding: 0 12px 0 5px; font-size: 14px; }
+  nav.links a.nav-app img { width: 26px; height: 26px; border-radius: 7px; }
+  nav.links a.pill-btn { display: none; }
+}
+@media (max-width: 420px) {
+  .brand span { display: none; }
+  .countdown span { font-size: 10px; letter-spacing: .06em; }
+}
+@media (prefers-reduced-motion: reduce) { .preorder-icon { animation: none; } }

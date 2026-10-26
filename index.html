@@ -45,8 +45,8 @@
         <span>EBEN LABS</span>
       </a>
       <nav class="links" aria-label="Main">
-        <a href="/Jolt/">Jolt Code</a>
-        <a href="/Stallwise/">Stallwise</a>
+        <a class="nav-app" href="/Jolt/"><img src="/images/jolt-icon.png" alt="">Jolt Code</a>
+        <a class="nav-app" href="/Stallwise/"><img src="/images/stallwise-icon.png" alt="">Stallwise</a>
         <a href="#about">About</a>
         <a class="pill-btn" href="mailto:epdesign08@gmail.com">Contact</a>
       </nav>
@@ -55,13 +55,50 @@
     <main>
       <section class="hero">
         <img class="hero-mark" src="favicon.svg" width="132" height="132" alt="EBEN Labs logo">
-        <div class="badge"><span>NOW BUILDING · JOLT CODE AND STALLWISE</span></div>
         <h1>Tools for people<br>who <span class="glow-text">build things.</span></h1>
         <p class="lede">EBEN Labs makes apps for builders, so the gap between an idea and a working project keeps getting shorter.</p>
-        <div class="actions">
-          <a class="btn primary" href="#apps">See our apps</a>
-          <a class="btn ghost" href="mailto:epdesign08@gmail.com">Say hello</a>
+
+        <div class="preorder glow-border">
+          <div class="inner">
+            <div class="preorder-head">
+              <img class="preorder-icon" src="/images/jolt-icon.png" alt="Jolt Code app icon">
+              <div>
+                <div class="eyebrow" style="color:#C9B5FF">NEW FOR iPHONE</div>
+                <h2>Jolt Code launches <span class="glow-text">January 1, 2027</span></h2>
+                <p>Code your ESP32 or Pico W from your phone. Join the pre-order list and we'll email you the moment pre-orders open, then again on launch day.</p>
+              </div>
+            </div>
+            <div class="countdown" id="countdown" aria-label="Time until launch">
+              <div><b data-unit="d">--</b><span>days</span></div>
+              <div><b data-unit="h">--</b><span>hours</span></div>
+              <div><b data-unit="m">--</b><span>minutes</span></div>
+              <div><b data-unit="s">--</b><span>seconds</span></div>
+            </div>
+            <form class="waitlist" data-source="home" novalidate hidden>
+              <div class="field">
+                <label class="sr" for="email-home">Email address</label>
+                <input id="email-home" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button type="submit">Join the pre-order list</button>
+              </div>
+              <p class="note" role="status">One email when pre-orders open, one on launch day. No spam.</p>
+            </form>
+            <a class="btn primary waitlist-fallback" href="/Jolt/">See Jolt Code</a>
+          </div>
         </div>
+
+        <nav class="app-links" aria-label="Our apps">
+          <a class="app-link jolt" href="/Jolt/">
+            <img src="/images/jolt-icon.png" alt="">
+            <span><b>Jolt Code</b><small>MicroPython from your iPhone</small></span>
+            <i aria-hidden="true">→</i>
+          </a>
+          <a class="app-link stallwise" href="/Stallwise/">
+            <img src="/images/stallwise-icon.png" alt="">
+            <span><b>Stallwise</b><small>Profit tracker for markets and pop-ups</small></span>
+            <i aria-hidden="true">→</i>
+          </a>
+        </nav>
       </section>
     </main>
   </div>
@@ -209,5 +246,7 @@
   </div>
 </div>
 <script src="scroll.js"></script>
+<script src="/app.js"></script>
+<script src="/waitlist.js"></script>
 </body>
 </html>

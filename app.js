@@ -88,4 +88,23 @@
       card.querySelector('.verdict').classList.add('in');
     });
   }
+
+  // A live countdown to launch day (midnight, January 1, in the visitor's own time zone).
+  const countdown = document.getElementById('countdown');
+  if (countdown) {
+    const launch = new Date(2027, 0, 1, 0, 0, 0);
+    const cells = Object.fromEntries([...countdown.querySelectorAll('[data-unit]')].map((el) => [el.dataset.unit, el]));
+    const pad = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      const left = Math.max(0, launch - new Date());
+      const sec = Math.floor(left / 1000);
+      cells.d.textContent = Math.floor(sec / 86400);
+      cells.h.textContent = pad(Math.floor(sec / 3600) % 24);
+      cells.m.textContent = pad(Math.floor(sec / 60) % 60);
+      cells.s.textContent = pad(sec % 60);
+      if (left === 0) countdown.hidden = true;
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
 })();
